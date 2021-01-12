@@ -67,12 +67,11 @@ export default {
 }
 
 .header-inner {
-  height: 50px;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (min-width: 640px) {
-    height: var(--header-height);
+  @media (--t) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
@@ -86,7 +85,7 @@ export default {
 
 .search {
   display: none;
-  @media (min-width: 640px) {
+  @media (--t) {
     display: block;
     text-align: center;
     input {
@@ -109,11 +108,11 @@ export default {
   bottom: 0;
   background-color: white;
   border-top: 1px solid rgb(var(--b6a));
-  height: 50px;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  @media (min-width: 640px) {
+  @media (--t) {
     height: auto;
     border: 0;
     position: static;
