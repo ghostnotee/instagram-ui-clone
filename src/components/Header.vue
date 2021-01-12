@@ -1,8 +1,11 @@
 <template>
   <header class="header">
     <Container class="header-inner">
+      <!-- Logo -->
+
       <router-link class="logo" to="/">Instagram</router-link>
 
+      <!-- Search -->
       <form>
         <input class="search" type="text" placeholder="Search..." />
       </form>
@@ -54,14 +57,26 @@ export default {
 
 <style scoped>
 .header {
+  z-index: 90;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: white;
   border-bottom: 1px solid rgb(var(--b6a));
 }
 
 .header-inner {
-  height: 57px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  height: 50px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  @media (min-width: 640px) {
+    height: var(--header-height);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
 }
 
 .logo {
@@ -70,24 +85,42 @@ export default {
 }
 
 .search {
-  text-align: center;
-  border: 1px solid rgb(var(--b6a));
-  background-color: rgb(var(--b3f));
-  border-radius: 4px;
-
-  input {
-    width: 215px;
-    height: 28px;
+  display: none;
+  @media (min-width: 640px) {
+    display: block;
+    text-align: center;
+    input {
+      width: 215px;
+      height: 28px;
+      border: 1px solid rgb(var(--b6a));
+      background-color: rgb(var(--b3f));
+      border-radius: 4px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }
 
 .navigation {
+  z-index: 90;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border-top: 1px solid rgb(var(--b6a));
+  height: 50px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-}
-
-a {
-  margin-left: 20px;
+  justify-content: space-around;
+  @media (min-width: 640px) {
+    height: auto;
+    border: 0;
+    position: static;
+    justify-content: flex-end;
+    a {
+      margin-left: 20px;
+    }
+  }
 }
 </style>
