@@ -2,7 +2,7 @@
   <div class="home">
     <div class="timeline">
       <h1>Home</h1>
-      <Avatar :size="50" />
+      <Post />
     </div>
     <div class="sidebar">
       <p>
@@ -15,12 +15,10 @@
 </template>
 
 <script>
-import Avatar from "@/components/Avatar";
+import Post from "@/components/Post";
 export default {
   name: "Home",
-  components: {
-    Avatar,
-  },
+  components: { Post },
 };
 </script>
 
